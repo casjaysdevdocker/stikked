@@ -37,8 +37,8 @@ if [ -d "/tmp/etc" ]; then
   copy "/tmp/etc/." "/etc/"
   copy "/tmp/etc/." "/usr/local/share/template-files/config/"
 fi
-if [ -d "/tmp/etc" ]; then
-  echo "Installing /tmp/etc to /etc"
+if [ -d "/tmp/data" ]; then
+  echo "Installing /tmp/data to /usr/local/share/template-files/data"
   copy "/tmp/data/." "/usr/local/share/template-files/data/"
 fi
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
