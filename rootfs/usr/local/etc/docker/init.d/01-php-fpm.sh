@@ -249,7 +249,7 @@ __pre_execute() {
   done
   # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
   # Replace variables
-  HOSTNAME="$sysname" __initialize_replace_variables "$ETC_DIR" "$CONF_DIR" "$WWW_ROOT_DIR" "$DEFAULT_CONF_DIR"
+  HOSTNAME="$sysname" __initialize_replace_variables "$ETC_DIR" "$CONF_DIR" "$WWW_ROOT_DIR" "/etc/php"
   # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
   # define actions
 
