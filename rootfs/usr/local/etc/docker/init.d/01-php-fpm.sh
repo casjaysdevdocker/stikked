@@ -149,7 +149,7 @@ user_pass="${PHP_FPM_USER_PASS_WORD:-}" # normal user password
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 # Specifiy custom directories to be created
-ADD_APPLICATION_FILES=""
+ADD_APPLICATION_FILES="/etc/php/php.ini"
 ADD_APPLICATION_DIRS=""
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 APPLICATION_FILES="$LOG_DIR/$SERVICE_NAME.log"
@@ -249,7 +249,7 @@ __pre_execute() {
   done
   # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
   # Replace variables
-  HOSTNAME="$sysname" __initialize_replace_variables "$ETC_DIR" "$CONF_DIR" "$WWW_ROOT_DIR" "/etc/php"
+  HOSTNAME="$sysname" __initialize_replace_variables "$ETC_DIR" "$CONF_DIR" "$WWW_ROOT_DIR" "/etc/php/php.ini"
   # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
   # define actions
 
