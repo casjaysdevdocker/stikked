@@ -259,6 +259,9 @@ __pre_execute() {
   HOSTNAME="$sysname" __initialize_replace_variables "$ETC_DIR" "$CONF_DIR" "$WWW_ROOT_DIR"
   # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
   # define actions
+  __printf_space "40" "Admin username is:" "root"
+  __printf_space "40" "Admin password is:" "$STIKKED_ADMIN_PASS"
+  __printf_space "40" "cron key is:" "$STIKKED_CRON_KEY"
 
   # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
   # unset unneeded variables
@@ -307,9 +310,6 @@ __pre_message() {
   fi
   [ -n "$PRE_EXEC_MESSAGE" ] && eval echo "$PRE_EXEC_MESSAGE"
   # execute commands
-  __printf_space "40" "Admin username is:" "root"
-  __printf_space "40" "Admin password is:" "$STIKKED_ADMIN_PASS"
-  __printf_space "40" "cron key is:" "$STIKKED_CRON_KEY"
 
   # set exitCode
   return $exitCode
