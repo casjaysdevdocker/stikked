@@ -88,8 +88,8 @@ WEB_SERVER_PORT="" # port : 80,443
 SERVER_PORTS="" # specifiy other ports
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 # Server directories
-WWW_ROOT_DIR="" # set default web dir
-DATABASE_DIR="" # set database dir
+WWW_ROOT_DIR="${WWW_ROOT_DIR:-/usr/share/httpd/default}"   # set default web dir
+DATABASE_DIR="${DATABASE_DIR:-/data/db/${DBTYPE:-sqlite}}" # set database dir
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 # Healthcheck variables
 HEALTH_ENABLED="yes" # enable healthcheck [yes/no]
