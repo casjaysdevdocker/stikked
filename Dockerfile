@@ -24,7 +24,7 @@ ARG IMAGE_REPO="casjaysdevdocker/pastebin"
 ARG IMAGE_VERSION="latest"
 ARG CONTAINER_VERSION=""
 
-ARG PULL_URL="casjaysdev/alpine"
+ARG PULL_URL="casjaysdevdocker/php8"
 ARG DISTRO_VERSION="${IMAGE_VERSION}"
 ARG BUILD_VERSION="${BUILD_DATE}"
 
@@ -53,15 +53,7 @@ ARG PHP_VERSION
 ARG PHP_SERVER
 ARG SHELL_OPTS
 
-ARG PACK_LIST="${PHP_VERSION}-bcmath ${PHP_VERSION}-bz2 ${PHP_VERSION}-calendar ${PHP_VERSION}-cgi ${PHP_VERSION}-common ${PHP_VERSION}-ctype ${PHP_VERSION}-curl ${PHP_VERSION}-dba ${PHP_VERSION}-dev \
-  ${PHP_VERSION}-doc ${PHP_VERSION}-dom ${PHP_VERSION}-embed ${PHP_VERSION}-enchant ${PHP_VERSION}-exif ${PHP_VERSION}-ffi ${PHP_VERSION}-fileinfo ${PHP_VERSION}-fpm ${PHP_VERSION}-ftp ${PHP_VERSION}-gd ${PHP_VERSION}-gettext \
-  ${PHP_VERSION}-gmp ${PHP_VERSION}-iconv ${PHP_VERSION}-imap ${PHP_VERSION}-intl ${PHP_VERSION}-ldap ${PHP_VERSION}-litespeed ${PHP_VERSION}-mbstring ${PHP_VERSION}-mysqli ${PHP_VERSION}-mysqlnd ${PHP_VERSION}-odbc ${PHP_VERSION}-opcache \
-  ${PHP_VERSION}-openssl ${PHP_VERSION}-pcntl ${PHP_VERSION}-pdo ${PHP_VERSION}-pdo_dblib ${PHP_VERSION}-pdo_mysql ${PHP_VERSION}-pdo_odbc ${PHP_VERSION}-pdo_pgsql ${PHP_VERSION}-pdo_sqlite ${PHP_VERSION}-pear ${PHP_VERSION}-pgsql ${PHP_VERSION}-phar\
-  ${PHP_VERSION}-phpdbg ${PHP_VERSION}-posix ${PHP_VERSION}-pspell ${PHP_VERSION}-session ${PHP_VERSION}-shmop ${PHP_VERSION}-simplexml ${PHP_VERSION}-snmp ${PHP_VERSION}-soap ${PHP_VERSION}-sockets ${PHP_VERSION}-sodium ${PHP_VERSION}-sqlite3 ${PHP_VERSION}-sysvmsg \
-  ${PHP_VERSION}-sysvsem ${PHP_VERSION}-sysvshm ${PHP_VERSION}-tidy ${PHP_VERSION}-tokenizer ${PHP_VERSION}-xml ${PHP_VERSION}-xmlreader ${PHP_VERSION}-xmlwriter ${PHP_VERSION}-xsl ${PHP_VERSION}-zip ${PHP_VERSION}-pecl-memcached ${PHP_VERSION}-pecl-mcrypt\
-  ${PHP_VERSION}-pecl-mongodb ${PHP_VERSION}-pecl-redis composer nginx nginx-mod-http-brotli nginx-mod-http-cache-purge nginx-mod-http-dav-ext nginx-mod-http-echo nginx-mod-http-encrypted-session nginx-mod-http-fancyindex nginx-mod-http-geoip nginx-mod-http-geoip2 \
-  nginx-mod-http-headers-more nginx-mod-http-image-filter nginx-mod-http-js nginx-mod-http-lua nginx-mod-http-perl nginx-mod-http-redis2 nginx-mod-http-set-misc nginx-mod-http-shibboleth nginx-mod-http-untar nginx-mod-http-upload-progress \
-  nginx-mod-http-upstream-fair nginx-mod-http-xslt-filter nginx-mod-http-zip"
+ARG PACK_LIST=""
 
 ENV ENV=~/.profile
 ENV SHELL="/bin/sh"
