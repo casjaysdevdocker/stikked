@@ -24,8 +24,8 @@ ARG IMAGE_REPO="casjaysdevdocker/pastebin"
 ARG IMAGE_VERSION="latest"
 ARG CONTAINER_VERSION=""
 
-ARG PULL_URL="casjaysdevdocker/php8"
-ARG DISTRO_VERSION="${IMAGE_VERSION}"
+ARG PULL_URL="casjaysdevdocker/php"
+ARG DISTRO_VERSION="8"
 ARG BUILD_VERSION="${BUILD_DATE}"
 
 FROM tianon/gosu:latest AS gosu
