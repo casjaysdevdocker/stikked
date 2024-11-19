@@ -24,7 +24,7 @@ ARG IMAGE_VERSION="latest"
 ARG CONTAINER_VERSION="USE_DATE"
 
 ARG PULL_URL="casjaysdevdocker/nginx"
-ARG DISTRO_VERSION="8"
+ARG DISTRO_VERSION="latest"
 ARG BUILD_VERSION="${BUILD_DATE}"
 
 FROM tianon/gosu:latest AS gosu
