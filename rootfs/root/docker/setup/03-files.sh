@@ -27,7 +27,6 @@ exitCode=0
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 # Predifined actions
-rm -Rf /etc/php*/php-fpm*
 if [ -d "/tmp/bin" ]; then
   echo "Installing /tmp/bin to /usr/local/bin"
   chmod -Rf +x "/tmp/bin"

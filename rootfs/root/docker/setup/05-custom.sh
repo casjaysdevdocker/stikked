@@ -30,6 +30,7 @@ WWW_ROOT_DIR="${WWW_ROOT_DIR:-/usr/share/httpd/default}"
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 # Main script
+[ -d "/etc/stikked" ] || mkdir -p "/etc/stikked"
 [ -d "$WWW_ROOT_DIR" ] || mkdir -p "$WWW_ROOT_DIR"
 git clone https://github.com/casjaydns/casjay.cc /tmp/stikked
 cp -Rf "/tmp/stikked/htdocs/." "$WWW_ROOT_DIR/"

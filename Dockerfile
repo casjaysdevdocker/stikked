@@ -1,7 +1,6 @@
-# syntax=docker/dockerfile:1
-# Docker image for pastebin using the alpine template
-ARG IMAGE_NAME="pastebin"
-ARG PHP_SERVER="pastebin"
+# Docker image for stikked using the alpine template
+ARG IMAGE_NAME="stikked"
+ARG PHP_SERVER="stikked"
 ARG BUILD_DATE="202408151738"
 ARG LANGUAGE="en_US.UTF-8"
 ARG TIMEZONE="America/New_York"
@@ -16,15 +15,15 @@ ARG SHELL_OPTS="set -e -o pipefail"
 
 ARG SERVICE_PORT="80"
 ARG EXPOSE_PORTS=""
-ARG PHP_VERSION="php82"
+ARG PHP_VERSION="system"
 ARG NODE_VERSION="system"
 ARG NODE_MANAGER="system"
 
-ARG IMAGE_REPO="casjaysdevdocker/pastebin"
+ARG IMAGE_REPO="casjaysdevdocker/stikked"
 ARG IMAGE_VERSION="latest"
-ARG CONTAINER_VERSION=""
+ARG CONTAINER_VERSION="USE_DATE"
 
-ARG PULL_URL="casjaysdevdocker/php"
+ARG PULL_URL="casjaysdevdocker/nginx"
 ARG DISTRO_VERSION="8"
 ARG BUILD_VERSION="${BUILD_DATE}"
 
@@ -61,7 +60,7 @@ ENV TZ="${TIMEZONE}"
 ENV TIMEZONE="${TZ}"
 ENV LANG="${LANGUAGE}"
 ENV TERM="xterm-256color"
-ENV HOSTNAME="casjaysdevdocker-pastebin"
+ENV HOSTNAME="casjaysdevdocker-stikked"
 
 USER ${USER}
 WORKDIR /root
@@ -214,12 +213,12 @@ LABEL org.opencontainers.image.license="${LICENSE}"
 LABEL org.opencontainers.image.build-date="${BUILD_DATE}"
 LABEL org.opencontainers.image.version="${BUILD_VERSION}"
 LABEL org.opencontainers.image.schema-version="${BUILD_VERSION}"
-LABEL org.opencontainers.image.url="https://hub.docker.com/r/casjaysdevdocker/pastebin"
-LABEL org.opencontainers.image.url.source="https://hub.docker.com/r/casjaysdevdocker/pastebin"
+LABEL org.opencontainers.image.url="https://hub.docker.com/r/casjaysdevdocker/stikked"
+LABEL org.opencontainers.image.url.source="https://hub.docker.com/r/casjaysdevdocker/stikked"
 LABEL org.opencontainers.image.vcs-type="Git"
 LABEL org.opencontainers.image.vcs-ref="${BUILD_VERSION}"
-LABEL org.opencontainers.image.vcs-url="https://github.com/casjaysdevdocker/pastebin"
-LABEL org.opencontainers.image.documentation="https://github.com/casjaysdevdocker/pastebin"
+LABEL org.opencontainers.image.vcs-url="https://github.com/casjaysdevdocker/stikked"
+LABEL org.opencontainers.image.documentation="https://github.com/casjaysdevdocker/stikked"
 LABEL com.github.containers.toolbox="false"
 
 ENV ENV=~/.bashrc
