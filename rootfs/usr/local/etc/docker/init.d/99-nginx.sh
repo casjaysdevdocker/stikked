@@ -217,7 +217,7 @@ __update_conf_files() {
   if [ ! -f "/config/stikked/config.php" ] && [ -f "/etc/stikked/config.php" ]; then
     cp -Rf "/etc/stikked/config.php" "/config/stikked/config.php"
   fi
-  symlink "/config/stikked/config.php" "$WWW_ROOT_DIR/application/config/stikked.php"
+  cp -Rf "/config/stikked/config.php" "/etc/stikked/config.php"
   # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
   # replace variables
   __replace "REPLACE_STIKKED_SITE_NAME" "$STIKKED_SITE_NAME" "/config/stikked/config.php"
