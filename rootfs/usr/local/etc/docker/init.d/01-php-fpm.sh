@@ -153,7 +153,7 @@ ADD_APPLICATION_FILES="/etc/php/php.ini"
 ADD_APPLICATION_DIRS=""
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 APPLICATION_FILES="$LOG_DIR/$SERVICE_NAME.log"
-APPLICATION_DIRS="$RUN_DIR $ETC_DIR $CONF_DIR $LOG_DIR $TMP_DIR"
+APPLICATION_DIRS="$RUN_DIR $ETC_DIR $CONF_DIR $LOG_DIR $TMP_DIR /tmp/php"
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 # Additional config dirs - will be Copied to /etc/$name
 ADDITIONAL_CONFIG_DIRS=""
