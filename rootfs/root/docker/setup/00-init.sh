@@ -27,6 +27,8 @@ exitCode=0
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 # Predifined actions
+[ -d "$WWW_ROOT_DIR" ] && rm -Rf "$WWW_ROOT_DIR"
+[ -d "/usr/local/share/wwwroot" ] && rm -d "/usr/local/share/wwwroot"
 [ -d "/usr/local/share/template-files/data" ] && rm -Rf "/usr/local/share/template-files/data"/*
 [ -d "/usr/local/share/template-files/config" ] && rm -Rf "/usr/local/share/template-files/config"/*
 [ -d "/usr/local/share/template-files/defaults" ] && rm -Rf "/usr/local/share/template-files/defaults"/*

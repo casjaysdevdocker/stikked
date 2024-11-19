@@ -3,7 +3,7 @@ name: stikked
 on: push
 
 jobs:
-  release-image:
+  release-stikked:
     runs-on: act_runner
     container:
       image: catthehacker/ubuntu:act-latest
