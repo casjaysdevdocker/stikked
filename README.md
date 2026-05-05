@@ -19,17 +19,17 @@ dockermgr update pastebin
 ## Install and run container
   
 ```shell
-mkdir -p "$HOME/.local/share/srv/docker/pastebin/rootfs"
+mkdir -p "$HOME/.local/share/srv/docker/pastebin/volumes"
 git clone "https://github.com/dockermgr/pastebin" "$HOME/.local/share/CasjaysDev/dockermgr/pastebin"
-cp -Rfva "$HOME/.local/share/CasjaysDev/dockermgr/pastebin/rootfs/." "$HOME/.local/share/srv/docker/pastebin/rootfs/"
+cp -Rfva "$HOME/.local/share/CasjaysDev/dockermgr/pastebin/rootfs/." "$HOME/.local/share/srv/docker/pastebin/volumes/"
 docker run -d \
 --restart always \
 --privileged \
 --name casjaysdevdocker-pastebin \
 --hostname pastebin \
 -e TZ=${TIMEZONE:-America/New_York} \
--v "$HOME/.local/share/srv/docker/casjaysdevdocker-pastebin/rootfs/data:/data:z" \
--v "$HOME/.local/share/srv/docker/casjaysdevdocker-pastebin/rootfs/config:/config:z" \
+-v "$HOME/.local/share/srv/docker/casjaysdevdocker-pastebin/volumes/data:/data:z" \
+-v "$HOME/.local/share/srv/docker/casjaysdevdocker-pastebin/volumes/config:/config:z" \
 -p 80:80 \
 casjaysdevdocker/pastebin:latest
 ```
@@ -46,8 +46,8 @@ services:
       - TZ=America/New_York
       - HOSTNAME=pastebin
     volumes:
-      - "$HOME/.local/share/srv/docker/casjaysdevdocker-pastebin/rootfs/data:/data:z"
-      - "$HOME/.local/share/srv/docker/casjaysdevdocker-pastebin/rootfs/config:/config:z"
+      - "$HOME/.local/share/srv/docker/casjaysdevdocker-pastebin/volumes/data:/data:z"
+      - "$HOME/.local/share/srv/docker/casjaysdevdocker-pastebin/volumes/config:/config:z"
     ports:
       - 80:80
     restart: always
