@@ -1,6 +1,6 @@
-## 👋 Welcome to pastebin 🚀  
+## 👋 Welcome to stikked 🚀  
 
- bash pastebin client  
+stikked README  
   
   
 ## Install my system scripts  
@@ -13,25 +13,26 @@
 ## Automatic install/update  
   
 ```shell
-dockermgr update pastebin
+dockermgr update stikked
 ```
   
 ## Install and run container
   
 ```shell
-mkdir -p "$HOME/.local/share/srv/docker/pastebin/volumes"
-git clone "https://github.com/dockermgr/pastebin" "$HOME/.local/share/CasjaysDev/dockermgr/pastebin"
-cp -Rfva "$HOME/.local/share/CasjaysDev/dockermgr/pastebin/rootfs/." "$HOME/.local/share/srv/docker/pastebin/volumes/"
+dockerHome="/var/lib/srv/$USER/docker/casjaysdevdocker/stikked/stikked/latest/rootfs"
+mkdir -p "/var/lib/srv/$USER/docker/stikked/rootfs"
+git clone "https://github.com/dockermgr/stikked" "$HOME/.local/share/CasjaysDev/dockermgr/stikked"
+cp -Rfva "$HOME/.local/share/CasjaysDev/dockermgr/stikked/rootfs/." "$dockerHome/"
 docker run -d \
 --restart always \
 --privileged \
---name casjaysdevdocker-pastebin \
---hostname pastebin \
+--name casjaysdevdocker-stikked-latest \
+--hostname stikked \
 -e TZ=${TIMEZONE:-America/New_York} \
--v "$HOME/.local/share/srv/docker/casjaysdevdocker-pastebin/volumes/data:/data:z" \
--v "$HOME/.local/share/srv/docker/casjaysdevdocker-pastebin/volumes/config:/config:z" \
+-v "$dockerHome/data:/data:z" \
+-v "$dockerHome/config:/config:z" \
 -p 80:80 \
-casjaysdevdocker/pastebin:latest
+casjaysdevdocker/stikked:latest
 ```
   
 ## via docker-compose  
@@ -40,14 +41,14 @@ casjaysdevdocker/pastebin:latest
 version: "2"
 services:
   ProjectName:
-    image: casjaysdevdocker/pastebin
-    container_name: casjaysdevdocker-pastebin
+    image: casjaysdevdocker/stikked
+    container_name: casjaysdevdocker-stikked
     environment:
       - TZ=America/New_York
-      - HOSTNAME=pastebin
+      - HOSTNAME=stikked
     volumes:
-      - "$HOME/.local/share/srv/docker/casjaysdevdocker-pastebin/volumes/data:/data:z"
-      - "$HOME/.local/share/srv/docker/casjaysdevdocker-pastebin/volumes/config:/config:z"
+      - "/var/lib/srv/$USER/docker/casjaysdevdocker/stikked/stikked/latest/rootfs/data:/data:z"
+      - "/var/lib/srv/$USER/docker/casjaysdevdocker/stikked/stikked/latest/rootfs/config:/config:z"
     ports:
       - 80:80
     restart: always
@@ -56,19 +57,19 @@ services:
 ## Get source files  
   
 ```shell
-dockermgr download src casjaysdevdocker/pastebin
+dockermgr download src casjaysdevdocker/stikked
 ```
   
 OR
   
 ```shell
-git clone "https://github.com/casjaysdevdocker/pastebin" "$HOME/Projects/github/casjaysdevdocker/pastebin"
+git clone "https://github.com/casjaysdevdocker/stikked" "$HOME/Projects/github/casjaysdevdocker/stikked"
 ```
   
 ## Build container  
   
 ```shell
-cd "$HOME/Projects/github/casjaysdevdocker/pastebin"
+cd "$HOME/Projects/github/casjaysdevdocker/stikked"
 buildx 
 ```
   
